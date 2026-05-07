@@ -1,1 +1,137 @@
-@import "tailwindcss"
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+@import "tailwindcss";
+
+
+@theme {
+    --color-green: #1D9E75;
+    --color-green-light: #E1F5EE;
+    --color-green-dark: #0F6E56;
+    --color-green-deeper: #085041;
+
+    --color-amber: #F59E0B;
+    --color-amber-light: #FFFBEB;
+
+    --color-red: #EF4444;
+    --color-red-light: #FEF2F2;
+
+    --color-ink: #374151;
+    --color-ink-2: #374151;
+    --color-ink-3: #6B7280;
+    --color-ink-4: #9CA3AF;
+
+    --color-surface: #FFFFFF;
+    --color-surface-2: #F9FAFB;
+    --color-surface-3: #F3F4F6;
+
+    --color-border: #E5E7EB;
+    --color-border-2: #D1D5DB;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08),0 2px 4px rgba(0,0,0,0.04);
+    --shadow-lg: 0 12px 32px rgba(0,0,0,0.10),0 4px 8px rgba(0,0,0,0.06);
+
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --font-display: 'Fraunces', serif;
+
+    --breakpoint-xs: 20rem;
+}
+
+
+@layer base {
+    body {
+        @apply text-[16px]/[1.6] antialiased font-body bg-surface-2 text-ink;
+    }
+
+    nav {
+        @apply fixed bg-[rgba(255,255,255,0.6)] backdrop-blur-lg border-b border-gray-200 flex-bw-ic p-3 w-full;
+    }
+
+    h1 {
+        @apply text-black font-display font-semibold text-ink tracking-wide;
+    }
+}
+
+
+@utility flex-bw-ic {
+    @apply flex justify-between items-center;
+}
+
+@utility flex-jc-ic {
+    @apply flex items-center justify-center;
+}
+
+@utility flex-jc{
+    @apply flex justify-center;
+}
+
+@utility flex-ic {
+    @apply flex items-center;
+}
+
+@layer components {
+    .logo {
+        @apply flex-ic gap-2;
+    }
+
+    .nav-links {
+        @apply flex-ic gap-[6px];
+
+        & a {
+            @apply text-ink-3 px-3 py-1.5 rounded-sm transition-colors duration-150 hover:bg-surface-3 hover:text-ink;
+        }
+    }
+
+    .hero {
+        @apply max-w-[680px] mx-auto text-center flex-ic flex-col;
+        
+        & .hero-badge {
+            @apply inline-flex items-center gap-4 md:gap-6 bg-green-light text-green-dark text-[clamp(0.4rem,3vw,0.8rem)] font-medium px-4 py-2 md:px-5 rounded-xl;
+        }
+
+        & .hero-badge-dot {
+            @apply w-3 h-3 rounded-2xl bg-green animate-pulse;
+        }
+
+        & h1 {
+            @apply font-display text-[clamp(2rem,8vw,3rem)] font-light tracking-wide text-ink;
+        }
+
+        & em {
+            @apply italic text-green text-[clamp(2rem,8vw,3rem)];
+        }
+
+        & p {
+            @apply text-[clamp(12px,3vw,15px)] max-w-[460px] my-4;
+        }
+
+        & .hero-stats {
+            @apply flex-jc border-1 border-border rounded-md bg-surface overflow-hidden w-fit mx-auto shadow-sm;
+
+            & .hero-stat{
+                @apply px-[clamp(12px,3vw,20px)] py-[clamp(20px,5vw,25px)] text-center border-r border-border;
+            }
+
+            & .hero-stat-num {
+                @apply font-display text-[clamp(16px,2.75vw,22px)] font-medium text-green;
+            }
+
+            & .hero-stat-lbl {
+                @apply text-[clamp(0.4rem,3vw,0.8rem)] text-ink-4 mr-[3px] whitespace-nowrap;
+            }
+        }
+    }
+
+}
+
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}

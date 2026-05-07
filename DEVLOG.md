@@ -23,3 +23,28 @@ Explored supabase more deeply (database+api).
 **Plan for tomorrow:**
 Build the spend input form with all 8 required AI tools.
 Add localStorage persistence for form state.
+
+## Day 2 — 2026-05-07
+
+**Hours worked:** 4
+
+**What I did:**
+Built the Home page and Navbar component with full responsiveness.
+Navbar has absolute positioning with backdrop blur, logo, nav links
+. Home page renders the Hero section (headline, animated badge, stats strip). Tested on mobile viewport . All CSS variables
+(--green, --font-display, --r-md etc.) are centrally defined in
+index.css so every component stays visually consistent. Committed
+after each major working milestone.
+
+**What I learned:**
+Learned how CSS custom properties (variables) work as a design
+token system — defining --green once in :root and using it
+everywhere means I can retheme the whole app by changing one line.
+
+**Blockers / what I'm stuck on:**
+stuck on theme variable in tailwind v4 set up, but now it's working.
+
+**Plan for tomorrow:**
+Creating the F Build SpendForm.jsx and ToolRow.jsx — all 8 tool rows with
+toggle on/off, plan selector, seats input, and monthly spend input.
+Wire up localStorage persistence so form state survives page reload.

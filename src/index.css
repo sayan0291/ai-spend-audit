@@ -75,6 +75,10 @@
     @apply flex items-center;
 }
 
+@utility card{
+    @apply bg-surface border-1 border-border shadow-sm rounded-lg overflow-hidden;
+}
+
 @layer components {
     .logo {
         @apply flex-ic gap-2;
@@ -83,7 +87,7 @@
     .nav-links {
         @apply flex-ic gap-[6px];
 
-        & a {
+        & .nav-link-buttn {
             @apply text-ink-3 px-3 py-1.5 rounded-sm transition-colors duration-150 hover:bg-surface-3 hover:text-ink;
         }
     }
@@ -112,7 +116,7 @@
         }
 
         & .hero-stats {
-            @apply flex-jc border-1 border-border rounded-md bg-surface overflow-hidden w-fit mx-auto shadow-sm;
+            @apply flex-jc rounded-md card w-fit mx-auto;
 
             & .hero-stat{
                 @apply px-[clamp(12px,3vw,20px)] py-[clamp(20px,5vw,25px)] text-center border-r border-border;
@@ -124,6 +128,34 @@
 
             & .hero-stat-lbl {
                 @apply text-[clamp(0.4rem,3vw,0.8rem)] text-ink-4 mr-[3px] whitespace-nowrap;
+            }
+        }
+    }
+
+    .main {
+        @apply max-w-lg px-[24px] grid grid-cols-[1fr_380px] gap-3 items-start;
+
+        .left-card{
+            @apply card;
+
+            .left-card-header {
+                @apply m-[clamp(8px,5vw,15px)] border-b-1 border-border flex-bw-ic;
+
+                .left-card-title {
+                    @apply text-[clamp(10px,1.4vw,15px)]/2 font-semibold text-ink-4;
+                }
+
+                .toggle-add-title {
+                    @apply text-[clamp(10px,1.4vw,15px)]/2 text-ink-4;
+                }
+            }
+
+            .left-card-body{
+                @apply py-[clamp(12px,2vw,16px)] px-[clamp(16px,2.5vw,20px)];
+
+                .tool-list{
+                    @apply flex flex-col gap-3;
+                }
             }
         }
     }

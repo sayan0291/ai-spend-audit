@@ -48,3 +48,21 @@ stuck on theme variable in tailwind v4 set up, but now it's working.
 Creating the F Build SpendForm.jsx and ToolRow.jsx — all 8 tool rows with
 toggle on/off, plan selector, seats input, and monthly spend input.
 Wire up localStorage persistence so form state survives page reload.
+
+## Day 3 — 2026-05-08
+
+**Hours worked:** 3
+
+**What I did:**
+Built the Audit page for check the spend add routing for Hero and Audit page using browser-router-dom . Audit page renders all Toolcard where is the all prices,team size,plan etc.
+
+** What I learned **
+I learned more about folder structure.How should i make it in real developement.
+
+**Blockers / what I'm stuck on:**
+stuck on toggling between two ai model.
+
+**Plan for tomorrow:**
+make the Toolcard fully optimize and working . 
+Make the result section for see the spend and 
+details how can any one make it minimize

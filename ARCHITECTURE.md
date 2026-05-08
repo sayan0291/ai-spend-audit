@@ -77,13 +77,17 @@ ai-spend-audit/
 │   ├── App.jsx                  ← Root: Navbar + routing
 │   ├── index.css                ← CSS variables, base styles, animations
 │   ├── components/
-│   │   ├── Navbar.jsx           ← Sticky nav
-│   │   ├── Hero.jsx             ← Headline + stats strip
-│   │   ├── SpendForm.jsx        ← Left panel: tool list + run button
-│   │   ├── ToolRow.jsx          ← Single tool: toggle + plan/seats/spend
-│   │   └── AuditResults.jsx     ← Right panel: savings, cards, email gate
+|   |   ├──shared/
+│   │   |   ├── Navbar.jsx           ← Sticky nav
+│   │   |   ├── SpendForm.jsx        ← Left panel: tool list + run button
+│   │   |   ├── ToolRow.jsx          ← Single tool: toggle + plan/seats/spend
+│   │   |   └── AuditResults.jsx     ← Right panel: savings, cards, email gate
+|   |   ├──ui/
+|   |   |   ├──Button.jsx            ← Reusable Button Component
+|   |   |   └──Icon.jsx              ← Reusable Icon Component
 │   ├── pages/
-│   │   └── Home.jsx             ← State owner: all handlers live here
+│   │   └── Hero.jsx             ← Headline + stats strip
+|   |   ├── Audit.jsx            ← Main panel: Left panel + Right Panel
 │   ├── engine/
 │   │   └── auditEngine.js       ← Pure JS audit rules
 │   ├── data/

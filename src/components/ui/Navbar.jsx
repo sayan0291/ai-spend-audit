@@ -1,7 +1,7 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
-import { Button } from "../ui/Button"
-import { Icon } from "../ui/Icon"
+import { Button } from "../shared/Button"
+import { Icon } from "../shared/Icon"
 import { Bot,TextAlignJustify,X  } from "lucide-react"
 
 const MobileView = () => {
@@ -34,10 +34,10 @@ export const Navbar = () => {
                     </Icon>
                 </div>
                 <div className="nav-links hidden md:block">
-                    <a href="#">How it works</a>
-                    <a href="#">Pricing Data</a>
+                    <NavLink className="nav-link-buttn" to="/hero">How it works</NavLink>
+                    <NavLink className="nav-link-buttn" to="/audi">Pricing Data</NavLink>
                     <Button varient="navButtn">
-                        Get Free Audit
+                        <NavLink to="/audit">Get Free Audit</NavLink>
                     </Button>
                 </div>
                 <Button varient="menuButtn" >

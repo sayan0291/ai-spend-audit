@@ -1,4 +1,4 @@
-export const Home = () => {
+export const Hero = () => {
     return(
         <div className="flex-jc-ic min-h-screen h-full w-screen">
             <div className="hero">

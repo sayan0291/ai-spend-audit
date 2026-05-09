@@ -1,7 +1,7 @@
 export const Hero = () => {
     return(
         <div className="flex-jc-ic min-h-screen h-full w-screen">
-            <div className="hero">
+            <div className="hero-field">
                 <div className="hero-badge">
                     <div className="hero-badge-dot"></div>
                     Free AI spend audit — no signup needed

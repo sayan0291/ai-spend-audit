@@ -1,4 +1,4 @@
-import './App.css'
+import './index.css'
 import { Routes,Route } from 'react-router-dom'
 import { Navbar } from './components/ui/Navbar'
 import { Hero } from './pages/Hero.jsx'

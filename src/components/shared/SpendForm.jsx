@@ -1,12 +1,23 @@
 import { useState } from "react"
 import { ToolCard } from "./ToolCard"
+import { TOOLS } from "../../data/PricingData"
 
 export const SpendForm = () => {
-    const [tools, setTools] = useState([
-        { id: 1, name: "Cursor", plan: "Business", seats: 8, cost: 320, initials: "Cu" },
-        { id: 2, name: "ChatGPT", plan: "Pro", seats: 5, cost: 200, initials: "CG" },
-        { id: 3, name: "Claude", plan: "Business", seats: 12, cost: 480, initials: "Cl" },
-    ])
+    const [entries, setEntries] = useState(
+        TOOLS.map((tool) =>  ({
+            toolId: tool.id,
+            active: false,
+            planId: tool.plans[0].id,
+            seats: 1,
+        }))
+    )
+
+    function toogleTool(id) {
+        setTools((prev) =>
+                prev.map((item) => item.toolId === id ? {...item ,active: !item.active } : item
+            )
+        )
+    }
 
     return(
         <div>
@@ -17,17 +28,20 @@ export const SpendForm = () => {
                 </div>
                 <div className="left-card-body">
                     <div className="tool-list">
-                        {tools.map(tool => (
+                        {TOOLS.map((tool) => {
+                            const entry = entries.find((e) => 
+                                e.toolId === tool.id
+                            );
+                        
+                        return (
                             <ToolCard
                                 key={tool.id}
-                                id={tool.id}
-                                toolName={tool.name}
-                                planType={tool.plan}
-                                seats={tool.seats}
-                                costPerMonth={tool.cost}
-                                initials={tool.initials}
+                                tool={tool}
+                                entry={entry}
+                                toogleTool={toogleTool}
                             />
-                        ))}
+                        );
+                        })}
                     </div>
                 </div>
             </div>

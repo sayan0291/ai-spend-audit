@@ -66,3 +66,19 @@ stuck on toggling between two ai model.
 make the Toolcard fully optimize and working . 
 Make the result section for see the spend and 
 details how can any one make it minimize
+
+## Day 4 — 2026-05-09
+
+**Hours worked:** 3
+
+**What I did:**
+Built the Audit page add daisyui for toogle button
+
+** What I learned **
+more learn about daisyui plugin how to install and use it for better and simple ui usage.
+
+**Blockers / what I'm stuck on:**
+some installation problem occurs when i try to install and use this plugin and I have some issue to collects the data about the ai model pricing , categorize details.
+
+**Plan for tomorrow:**
+Make the full Audit page ui working and make it responsive.

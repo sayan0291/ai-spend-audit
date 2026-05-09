@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
 
 @import "tailwindcss";
+@plugin "daisyui";
 
 
 @theme {
@@ -50,7 +51,7 @@
     }
 
     nav {
-        @apply fixed bg-[rgba(255,255,255,0.6)] backdrop-blur-lg border-b border-gray-200 flex-bw-ic p-3 w-full;
+        @apply sticky z-50 top-0 bg-[rgba(255,255,255,0.6)] backdrop-blur-lg border-b border-gray-200 flex-bw-ic p-3 w-full;
     }
 
     h1 {
@@ -92,7 +93,7 @@
         }
     }
 
-    .hero {
+    .hero-field {
         @apply max-w-[680px] mx-auto text-center flex-ic flex-col;
         
         & .hero-badge {
@@ -116,7 +117,7 @@
         }
 
         & .hero-stats {
-            @apply flex-jc rounded-md card w-fit mx-auto;
+            @apply flex-jc flex-row rounded-md card w-fit mx-auto;
 
             & .hero-stat{
                 @apply px-[clamp(12px,3vw,20px)] py-[clamp(20px,5vw,25px)] text-center border-r border-border;
@@ -133,13 +134,13 @@
     }
 
     .main {
-        @apply max-w-lg px-[24px] grid grid-cols-[1fr_380px] gap-3 items-start;
+        @apply max-w-lg px-[24px] grid grid-cols-[1fr_380px] md:grid-cols-[1fr] gap-3 items-start;
 
         .left-card{
             @apply card;
 
             .left-card-header {
-                @apply m-[clamp(8px,5vw,15px)] border-b-1 border-border flex-bw-ic;
+                @apply p-[clamp(8px,5vw,15px)] border-b-1 border-border flex-bw-ic;
 
                 .left-card-title {
                     @apply text-[clamp(10px,1.4vw,15px)]/2 font-semibold text-ink-4;
@@ -155,6 +156,30 @@
 
                 .tool-list{
                     @apply flex flex-col gap-3;
+
+                    .tool-row {
+                        @apply border border-border overflow-hidden;
+
+                        .tool-row-header {
+                            @apply flex-ic p-5 gap-[10px] bg-surface cursor-pointer;
+
+                            .tool-icon {
+                                @apply w-[28px] h-[28px] rounded-sm flex-jc-ic text-[clamp(10px,1.8vw,13px)] font-semibold shrink-0;
+                            }
+                            .tool-name-wrap{
+                                @apply flex-1;
+
+                                .tool-name {
+                                    @apply text-[clamp(11px,1.9vw,14px)] font-medium text-ink-4;
+                                }
+
+                                .tool-plan {
+                                    @apply text-[clamp(9px,1.6vw,11px)];
+                                }
+                            }
+
+                        }
+                    }
                 }
             }
         }

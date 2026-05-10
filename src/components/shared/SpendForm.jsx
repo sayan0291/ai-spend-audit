@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { ToolCard } from "./ToolCard"
 import { TOOLS } from "../../data/PricingData"
+import { Button } from "./Button"
+import { Play } from "lucide-react"
 
 export const SpendForm = () => {
     const [entries, setEntries] = useState(
@@ -13,7 +15,7 @@ export const SpendForm = () => {
     )
 
     function toogleTool(id) {
-        setTools((prev) =>
+        setEntries((prev) =>
                 prev.map((item) => item.toolId === id ? {...item ,active: !item.active } : item
             )
         )
@@ -43,6 +45,12 @@ export const SpendForm = () => {
                         );
                         })}
                     </div>
+                    <Button varient="runBtn">
+                        <div className="flex-jc-ic gap-2">
+                            <Play size={25} strokeWidth={1} />
+                            <h4>Run my audit — it's free</h4>
+                        </div>
+                </Button>
                 </div>
             </div>
         </div>

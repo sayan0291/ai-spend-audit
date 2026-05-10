@@ -134,7 +134,7 @@
     }
 
     .main {
-        @apply max-w-lg px-[24px] grid grid-cols-[1fr_380px] md:grid-cols-[1fr] gap-3 items-start;
+        @apply px-[24px] grid grid-cols-[1fr] md:grid-cols-2 gap-5 items-start;
 
         .left-card{
             @apply card;
@@ -164,7 +164,7 @@
                             @apply flex-ic p-5 gap-[10px] bg-surface cursor-pointer;
 
                             .tool-icon {
-                                @apply w-[28px] h-[28px] rounded-sm flex-jc-ic text-[clamp(10px,1.8vw,13px)] font-semibold shrink-0;
+                                @apply w-[28px] h-[28px] rounded-sm flex-jc-ic text-[clamp(10px,1.8vw,13px)] font-semibold shrink-0 text-[#FFF];
                             }
                             .tool-name-wrap{
                                 @apply flex-1;
@@ -172,16 +172,51 @@
                                 .tool-name {
                                     @apply text-[clamp(11px,1.9vw,14px)] font-medium text-ink-4;
                                 }
-
-                                .tool-plan {
-                                    @apply text-[clamp(9px,1.6vw,11px)];
-                                }
                             }
 
                         }
                     }
                 }
+
             }
+
+            .tool-fields {
+                @apply grid grid-cols-3 gap-3 border-t bg-gray-50 p-4 bg-surface-2 border-t-1 border-border;
+
+                & input , select {
+                    @apply text-[clamp(11px,1.6vw,13px)] p-2 border border-border bg-surface text-ink-4 outline-none transition-colors focus:border-green rounded-sm font-body;
+                }
+            }
+        }
+
+        .right-hero-card{
+            @apply bg-transparent;
+
+            .savings-hero-card {
+                @apply bg-linear-[135deg,#0F6E56_0%,#1D9E75_100%] rounded-md p-[20px] mb-3 relative overflow-hidden;
+
+                .saving-tag {
+                    @apply text-[clamp(13px,2.1vw,17px)] font-semibold tracking-wide uppercase opacity-[0.75] mb-[8px];
+                }
+
+                .savings-amount {
+                    @apply font-display text-[clamp(33px,5vw,40px)] font-semibold mb-[5px];
+                    
+                    & sup {
+                        @apply text-[clamp(25px,3.7vw,30px)] align-super;
+                    }
+                }
+
+                .savings-period {
+                    @apply text-[clamp(10px,1.6vw,13px)] opacity-[0.75] mb-[10px];
+                }
+
+                .savings-annual {
+                    @apply bg-[rgba(255,255,255,0.12)] rounded-sm p-3 text-[clamp(10px,1.6vw,13px)] flex-bw-ic;
+                }
+            }
+
+            
         }
     }
 

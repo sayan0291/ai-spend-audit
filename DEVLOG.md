@@ -99,3 +99,19 @@ No problem occurs in todays work.
 
 **Plan for tomorrow:**
 add supabase and save the result data on it. make the share option that's how user can share there audit result
+
+## Day 5 — 2026-05-10
+
+**Hours worked:** 4
+
+**What I did:**
+Built the Audit engine for dynamic result for every different audit form
+
+** What I learned **
+make the page more dynamic and code reusable
+
+**Blockers / what I'm stuck on:**
+No problem occurs in todays work.
+
+**Plan for tomorrow:**
+add supabase and save the result data on it. make the share option that's how user can share there audit result final output with deployment

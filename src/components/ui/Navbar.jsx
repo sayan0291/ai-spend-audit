@@ -7,10 +7,10 @@ import { Bot,TextAlignJustify,X  } from "lucide-react"
 const MobileView = () => {
     return(
         <div className="nav-links absolute top-17 right-0 w-1/2 bg-white flex flex-col gap-5 p-6 md:hidden z-50">
-            <a href="#">How it works</a>
-            <a href="#">Pricing Data</a>
+            <NavLink className="nav-link-buttn" to="/hero">How it works</NavLink>
+            <NavLink className="nav-link-buttn" to="/audit">Pricing Data</NavLink>
             <Button varient="navButtn">
-                Get Free Audit
+                <NavLink to="/audit">Get Free Audit</NavLink>
             </Button>
         </div>
     )
@@ -35,7 +35,7 @@ export const Navbar = () => {
                 </div>
                 <div className="nav-links hidden md:block">
                     <NavLink className="nav-link-buttn" to="/hero">How it works</NavLink>
-                    <NavLink className="nav-link-buttn" to="/audi">Pricing Data</NavLink>
+                    <NavLink className="nav-link-buttn" to="/audit">Pricing Data</NavLink>
                     <Button varient="navButtn">
                         <NavLink to="/audit">Get Free Audit</NavLink>
                     </Button>

@@ -215,8 +215,100 @@
                     @apply bg-[rgba(255,255,255,0.12)] rounded-sm p-3 text-[clamp(10px,1.6vw,13px)] flex-bw-ic;
                 }
             }
+            .audit-items {
+                @apply flex flex-col gap-[12px];
 
+                .audit-item {
+                    @apply bg-surface border border-border rounded-md p-3 transition-shadow duration-150 hover:shadow-sm;
+
+                    .audit-item-top {
+                        @apply flex-bw-ic mb-[8px];
+
+                        .audit-tool-info {
+                            @apply flex-ic gap-2;
+
+                            .tool-icon{
+                                @apply bg-red-500;
+                            }
+
+                            .audit-item-name {
+                                @apply text-[clamp(10px,1.4vw,15px)] font-medium text-ink;
+                            }
+                        }
+
+                        .badge {
+                            @apply text-[clamp(8px,1.2vw,11px)] font-semibold p-3 rounded-xl;
+                        }
+
+                        .badge-save {
+                            @apply bg-green text-green-dark;
+                        }
+
+                        .badge-ok {
+                            @apply bg-[#F0FDF4] text-[#166534];
+                        }
+
+                        .badge-warn {
+                            @apply bg-amber-light text-[#92400E];
+                        }
+                    }
+
+                    .audit-change {
+                        @apply flex-ic gap-2 text-[clamp(10px,1.2vw,13px)] mb-2;
+
+                        .audit-from {
+                            @apply text-ink-4 line-through;
+                        }
+
+                        .audit-arrow {
+                            @apply text-ink-4 text-[clamp(9px,1.1vw,12px)];
+                        }
+
+                        .audit-to {
+                            @apply text-green font-medium;
+                        }
+                    }
+                }
+                .audit-reason {
+                    @apply text-[clamp(10px,1.2vw,13px)]/5 text-ink-4;
+                }
+            }
             
+            .ai-summery-card {
+                @apply bg-surface border border-border rounded-md p-4 mb-4;
+
+                .ai-summery-label {
+                    @apply flex-ic gap-2;
+                    .ai-dot {
+                        @apply w-3 h-3 rounded-2xl bg-green;
+                    }
+                }
+                .ai-summery-text {
+                    @apply text-[clamp(10px,1.2vw,13px)]/4 text-ink-2;
+                }
+            }
+
+            .email-gate-card{
+                @apply bg-surface border border-border rounded-md p-4 mb-[12px];
+                .email-gate-title {
+                    @apply text-[clamp(10px,1.2vw,13px)] font-medium mb-1;
+                }
+                .email-gate-sub {
+                    @apply text-[clamp(10px,1.1vw,12px)] text-ink-3 mb-3;
+                }
+                .email-input-row {
+                    @apply flex gap-3;
+
+                    & input {
+                        @apply flex-1 font-body text-[clamp(10px,1.2vw,13px)] p-3 border border-border rounded-sm bg-surface text-ink outline-none focus:border-green;
+                    }
+                }
+
+            }
+
+            .share-row {
+                @apply flex gap-3;
+            }
         }
     }
 

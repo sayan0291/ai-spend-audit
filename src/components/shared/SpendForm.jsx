@@ -4,6 +4,9 @@ import { TOOLS } from "../../data/PricingData"
 import { Button } from "./Button"
 import { Play } from "lucide-react"
 
+const teamSize = ["1–5", "6–15", "16–50", "50+"];
+const useCase = ["coding", "writing", "data", "research", "mixed"];
+
 export const SpendForm = () => {
     const [entries, setEntries] = useState(
         TOOLS.map((tool) =>  ({
@@ -14,7 +17,7 @@ export const SpendForm = () => {
         }))
     )
 
-    function toogleTool(id) {
+    function toggleTool(id) {
         setEntries((prev) =>
                 prev.map((item) => item.toolId === id ? {...item ,active: !item.active } : item
             )
@@ -40,17 +43,29 @@ export const SpendForm = () => {
                                 key={tool.id}
                                 tool={tool}
                                 entry={entry}
-                                toogleTool={toogleTool}
+                                toggleTool={toggleTool}
                             />
                         );
                         })}
+                    </div>
+                    <div className="tool-fields grid-cols-2">
+                        <select className="fields" >
+                            {
+                                teamSize.map((team) => (<option key={team}>{team}</option>))
+                            }
+                        </select>
+                        <select className="fields" >
+                            {
+                                useCase.map((usage) => (<option key={usage}>{usage}</option>))
+                            }
+                        </select>
                     </div>
                     <Button varient="runBtn">
                         <div className="flex-jc-ic gap-2">
                             <Play size={25} strokeWidth={1} />
                             <h4>Run my audit — it's free</h4>
                         </div>
-                </Button>
+                    </Button>
                 </div>
             </div>
         </div>

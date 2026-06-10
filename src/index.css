@@ -5,6 +5,15 @@
 
 
 @theme {
+
+    --color-yellow: #EEDE4E;
+    --color-slate: #E2E8F0;
+    --color-pink: #FBB6CE;
+    --color-purple: #D6BCFA;
+    --color-violet: #A3BFFA;
+    --color-light-violet: #C7D8FC;
+    --color-blue: #90CDF4;
+
     --color-green: #1D9E75;
     --color-green-light: #E1F5EE;
     --color-green-dark: #0F6E56;
@@ -12,6 +21,7 @@
 
     --color-amber: #F59E0B;
     --color-amber-light: #FFFBEB;
+    --color-amber-l:#FEF3DC;
 
     --color-red: #EF4444;
     --color-red-light: #FEF2F2;
@@ -57,6 +67,10 @@
     h1 {
         @apply text-black font-display font-semibold text-ink tracking-wide;
     }
+
+    em {
+        @apply italic text-green text-[clamp(1rem,4vw,2rem)];
+    }
 }
 
 
@@ -85,8 +99,12 @@
         @apply flex-ic gap-2;
     }
 
+    .title-h1 {
+        @apply font-display text-[clamp(2rem,8vw,3rem)] font-light tracking-wide text-ink;
+    }
+
     .nav-links {
-        @apply flex-ic gap-[6px];
+        @apply flex-ic gap-2;
 
         & .nav-link-buttn {
             @apply text-ink-3 px-3 py-1.5 rounded-sm transition-colors duration-150 hover:bg-surface-3 hover:text-ink;
@@ -94,222 +112,163 @@
     }
 
     .hero-field {
-        @apply max-w-[680px] mx-auto text-center flex-ic flex-col;
+        @apply text-center flex-ic flex-col;
         
         & .hero-badge {
             @apply inline-flex items-center gap-4 md:gap-6 bg-green-light text-green-dark text-[clamp(0.4rem,3vw,0.8rem)] font-medium px-4 py-2 md:px-5 rounded-xl;
         }
 
         & .hero-badge-dot {
-            @apply w-3 h-3 rounded-2xl bg-green animate-pulse;
+            @apply w-3 h-3 rounded-2xl bg-green;
         }
 
-        & h1 {
-            @apply font-display text-[clamp(2rem,8vw,3rem)] font-light tracking-wide text-ink;
-        }
-
-        & em {
-            @apply italic text-green text-[clamp(2rem,8vw,3rem)];
-        }
-
-        & p {
-            @apply text-[clamp(12px,3vw,15px)] max-w-[460px] my-4;
+        & div{
+            & p {
+                @apply text-[clamp(12px,3vw,15px)] max-w-[460px] my-4;
+            }
         }
 
         & .hero-stats {
-            @apply flex-jc flex-row rounded-md card w-fit mx-auto;
+            @apply grid grid-cols-1 md:grid-cols-4 gap-[clamp(2px,0.9vw,6px)];
 
-            & .hero-stat{
-                @apply px-[clamp(12px,3vw,20px)] py-[clamp(20px,5vw,25px)] text-center border-r border-border;
-            }
-
-            & .hero-stat-num {
-                @apply font-display text-[clamp(16px,2.75vw,22px)] font-medium text-green;
-            }
-
-            & .hero-stat-lbl {
-                @apply text-[clamp(0.4rem,3vw,0.8rem)] text-ink-4 mr-[3px] whitespace-nowrap;
+            & div {
+                @apply flex-ic gap-1;
+                p{
+                    @apply text-[clamp(12px,1.5vw,15px)] m-[clamp(2px,0.9vw,6px)] font-mono;
+                }
             }
         }
     }
 
-    .main {
-        @apply px-[24px] grid grid-cols-[1fr] md:grid-cols-2 gap-5 items-start;
+    .dash-preview {
+        @apply w-screen px-5;
 
-        .left-card{
-            @apply card;
+        .dash-label{
+            @apply flex-jc-ic gap-2 font-display mb-5;
 
-            .left-card-header {
-                @apply p-[clamp(8px,5vw,15px)] border-b-1 border-border flex-bw-ic;
-
-                .left-card-title {
-                    @apply text-[clamp(10px,1.4vw,15px)]/2 font-semibold text-ink-4;
-                }
-
-                .toggle-add-title {
-                    @apply text-[clamp(10px,1.4vw,15px)]/2 text-ink-4;
-                }
+            & div{
+                @apply w-[80px] h-[1px] bg-ink-4;
             }
 
-            .left-card-body{
-                @apply py-[clamp(12px,2vw,16px)] px-[clamp(16px,2.5vw,20px)];
+            & p{
+                @apply text-gray-400 text-[clamp(13px,1.4vw,17px)];
+            }
+        }
 
-                .tool-list{
-                    @apply flex flex-col gap-3;
+        .dash-img {
+            @apply h-screen;
+        }
+    }
 
-                    .tool-row {
-                        @apply border border-border overflow-hidden;
+    .features-section {
+        @apply w-screen px-8;
 
-                        .tool-row-header {
-                            @apply flex-ic p-5 gap-[10px] bg-surface cursor-pointer;
+        .features {
+            @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-7 py-5;
 
-                            .tool-icon {
-                                @apply w-[28px] h-[28px] rounded-sm flex-jc-ic text-[clamp(10px,1.8vw,13px)] font-semibold shrink-0 text-[#FFF];
-                            }
-                            .tool-name-wrap{
-                                @apply flex-1;
-
-                                .tool-name {
-                                    @apply text-[clamp(11px,1.9vw,14px)] font-medium text-ink-4;
-                                }
-                            }
-
-                        }
-                    }
+            .card {
+                @apply  border-1 border-gray-200 rounded-sm shadow-sm [transition:box-shadow_0.2s,transform_0.2s] hover:shadow-md hover:-translate-y-[3px] p-7;
+                .feature-title {
+                    @apply text-xl font-semibold text-gray-700 mb-4 font-display;
                 }
+                .feature-desc {
+                    @apply text-lg font-medium text-gray-500 font-serif;
+                }
+            }
+        }        
+    }
 
+    .side-bar {
+        @apply flex justify-between flex-col min-h-screen border-1 border-border-2 shrink-0;
+        
+        .side-bar-section{
+            @apply w-full font-display px-3 pt-3 border-t-1 border-border-2;
+
+            & h3 {
+                @apply text-ink-4 uppercase font-serif font-body text-[clamp(9px,2vw,14px)];
             }
 
-            .tool-fields {
-                @apply grid grid-cols-3 gap-3 border-t bg-gray-50 p-4 bg-surface-2 border-t-1 border-border;
+            .nav-item {
+                @apply flex flex-col mb-2;
 
-                & input , select {
-                    @apply text-[clamp(11px,1.6vw,13px)] p-2 border border-border bg-surface text-ink-4 outline-none transition-colors focus:border-green rounded-sm font-body;
+                & a{
+                    @apply py-1 px-2 rounded-[5px] text-ink-3 text-[clamp(9px,2vw,13px)] font-medium hover:bg-border-2 hover:text-green-dark transition-all duration-150;
                 }
             }
         }
 
-        .right-hero-card{
-            @apply bg-transparent;
+        .user-section {
+            @apply border-t-1 border-border-2 p-2 flex-ic gap-2;
 
-            .savings-hero-card {
-                @apply bg-linear-[135deg,#0F6E56_0%,#1D9E75_100%] rounded-md p-[20px] mb-3 relative overflow-hidden;
-
-                .saving-tag {
-                    @apply text-[clamp(13px,2.1vw,17px)] font-semibold tracking-wide uppercase opacity-[0.75] mb-[8px];
-                }
-
-                .savings-amount {
-                    @apply font-display text-[clamp(33px,5vw,40px)] font-semibold mb-[5px];
-                    
-                    & sup {
-                        @apply text-[clamp(25px,3.7vw,30px)] align-super;
-                    }
-                }
-
-                .savings-period {
-                    @apply text-[clamp(10px,1.6vw,13px)] opacity-[0.75] mb-[10px];
-                }
-
-                .savings-annual {
-                    @apply bg-[rgba(255,255,255,0.12)] rounded-sm p-3 text-[clamp(10px,1.6vw,13px)] flex-bw-ic;
-                }
-            }
-            .audit-items {
-                @apply flex flex-col gap-[12px];
-
-                .audit-item {
-                    @apply bg-surface border border-border rounded-md p-3 transition-shadow duration-150 hover:shadow-sm;
-
-                    .audit-item-top {
-                        @apply flex-bw-ic mb-[8px];
-
-                        .audit-tool-info {
-                            @apply flex-ic gap-2;
-
-                            .tool-icon{
-                                @apply bg-red-500;
-                            }
-
-                            .audit-item-name {
-                                @apply text-[clamp(10px,1.4vw,15px)] font-medium text-ink;
-                            }
-                        }
-
-                        .badge {
-                            @apply text-[clamp(8px,1.2vw,11px)] font-semibold p-3 rounded-xl;
-                        }
-
-                        .badge-save {
-                            @apply bg-green text-green-dark;
-                        }
-
-                        .badge-ok {
-                            @apply bg-[#F0FDF4] text-[#166534];
-                        }
-
-                        .badge-warn {
-                            @apply bg-amber-light text-[#92400E];
-                        }
-                    }
-
-                    .audit-change {
-                        @apply flex-ic gap-2 text-[clamp(10px,1.2vw,13px)] mb-2;
-
-                        .audit-from {
-                            @apply text-ink-4 line-through;
-                        }
-
-                        .audit-arrow {
-                            @apply text-ink-4 text-[clamp(9px,1.1vw,12px)];
-                        }
-
-                        .audit-to {
-                            @apply text-green font-medium;
-                        }
-                    }
-                }
-                .audit-reason {
-                    @apply text-[clamp(10px,1.2vw,13px)]/5 text-ink-4;
-                }
-            }
-            
-            .ai-summery-card {
-                @apply bg-surface border border-border rounded-md p-4 mb-4;
-
-                .ai-summery-label {
-                    @apply flex-ic gap-2;
-                    .ai-dot {
-                        @apply w-3 h-3 rounded-2xl bg-green;
-                    }
-                }
-                .ai-summery-text {
-                    @apply text-[clamp(10px,1.2vw,13px)]/4 text-ink-2;
-                }
+            & h2{
+                @apply text-[clamp(9px,2vw,14px)] text-ink-4;
             }
 
-            .email-gate-card{
-                @apply bg-surface border border-border rounded-md p-4 mb-[12px];
-                .email-gate-title {
-                    @apply text-[clamp(10px,1.2vw,13px)] font-medium mb-1;
-                }
-                .email-gate-sub {
-                    @apply text-[clamp(10px,1.1vw,12px)] text-ink-3 mb-3;
-                }
-                .email-input-row {
-                    @apply flex gap-3;
-
-                    & input {
-                        @apply flex-1 font-body text-[clamp(10px,1.2vw,13px)] p-3 border border-border rounded-sm bg-surface text-ink outline-none focus:border-green;
-                    }
-                }
-
-            }
-
-            .share-row {
-                @apply flex gap-3;
+            & small {
+                @apply text-[clamp(7px,2vw,12px)] text-ink;
             }
         }
+
+    }
+
+    .section-top {
+        @apply flex-bw-ic p-4 border-b-1 border-border-2;
+    }
+
+    .pop-up-card {
+        @apply fixed top-0 left-0 h-screen w-screen flex-jc-ic z-9999 bg-black/20 backdrop-blur-sm;
+
+        .pop-card-body {
+            @apply max-w-2xl w-full border p-5 border-ink-3 rounded-sm;
+        }
+
+        & h2 {
+            @apply text-2xl font-semibold text-green-deeper mb-6 font-display;
+        }
+
+        & label{
+            @apply text-sm font-medium block text-ink mb-1 font-body;
+        }
+
+        & select {
+            @apply w-full border-2 border-border rounded-md p-2 font-body;
+        }
+
+        & button {
+            @apply text-white px-5 py-2 rounded-lg duration-150 font-serif;
+        }
+    }
+
+    .section-title {
+        @apply text-lg font-semibold text-slate-800;
+    }
+
+    .stat-card {
+        @apply w-full bg-white border border-slate-200 rounded-xl p-4 sm:p-5;
+    }
+
+    .stat-value {
+        @apply text-2xl sm:text-3xl font-bold text-slate-800 mt-2;
+    }
+
+    .stat-subtitle {
+        @apply text-xs sm:text-sm text-slate-500 mt-2 break-words;
+    }
+
+    .renewal-item {
+        @apply flex items-center justify-between p-3 rounded-lg bg-slate-50;
+    }
+
+    .expense-row {
+        @apply flex items-center justify-between p-3 rounded-lg bg-slate-50;
+    }
+
+    .badge-danger {
+        @apply text-xs px-2 py-1 rounded-full bg-red-100 text-red-600;
+    }
+
+    .badge-success {
+        @apply text-xs px-2 py-1 rounded-full bg-green-100 text-green-600;
     }
 
 }
